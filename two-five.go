@@ -35,12 +35,13 @@ import "fmt"
 */
 func FindOnlyString(a string) int {
 	fmt.Println(a)
-	lastOccurred := make(map[byte]int)
+	lastOccurred := make(map[rune]int) //make(map[byte]int)
 	start := 0
 	maxLength := 0
-	for k,v:=range []byte(a) {
+	for k,v:=range []rune(a) {
+		fmt.Println(k,v)
 		if lastK,ok := lastOccurred[v];ok && lastK >= start{
-			start = lastOccurred[v] + 1
+			start = lastK + 1
 		}
 		if k -start + 1 > maxLength{
 			maxLength = k-start+1
@@ -51,5 +52,7 @@ func FindOnlyString(a string) int {
 }
 
 func main()  {
-	FindOnlyString("abcabc")
+	fmt.Println(FindOnlyString("你好呀你好呀"))  //只需将字符串转为rune类型就可以使用utf-8了。
+	fmt.Println(FindOnlyString("123123"))
+	fmt.Println(FindOnlyString("abcabc"))
 }
