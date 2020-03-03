@@ -1,7 +1,7 @@
 //第一节：变量定义
 package main
 import (
-	"fmt"  //定义了包，一定要在下面代码中使用到
+	"fmt" //定义了包，一定要在下面代码中使用到
 )
 //全局变量，方法见：variableGlobal
 var global_a = 12  // global_a := 12 全局变量简写 这是错误的写法
